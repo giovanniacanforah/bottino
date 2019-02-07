@@ -1,6 +1,8 @@
 <?php
+
+if(php_sapi_name() != 'cli') die();
 if(!file_exists("already")){
-    if($argv[1] == "install"){
+    if(isset($argv[1]) and $argv[1] == "install"){
       file_put_contents("already", "installed");  
       echo 'Okay, installed.';
       echo PHP_EOL.'Start @ManagerFatherBot on Telegram for continue!'.PHP_EOL;
